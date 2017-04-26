@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.ini
+venv
+__pycache__
+.DS_Store
+.idea/
+posts_replied_to.txt
