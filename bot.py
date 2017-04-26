@@ -33,7 +33,7 @@ for submission in subreddit.new(limit=5):
             submission.reply("Donald Trump says: SAD!")
             # Console log which post was replied to
             print("Bot replying to : ", submission.title)
-            # Append post ID to file
+            # Append post ID to list
             posts_replied_to.append(submission.id)
 
 # Open txt file
