@@ -24,13 +24,13 @@ else:
        posts_replied_to = list(filter(None, posts_replied_to))
 
 # Loop through `hot` posts (limit to 5)
-for submission in subreddit.hot(limit=5):
+for submission in subreddit.new(limit=5):
     # Check if post ID is inside of file already
     if submission.id not in posts_replied_to:
         # Check title of post contains `i love python`
         if re.search("i love python", submission.title, re.IGNORECASE):
             # Reply to post
-            submission.reply("The Nigerian Prince says: Me as well!")
+            submission.reply("Donald Trump says: SAD!")
             # Console log which post was replied to
             print("Bot replying to : ", submission.title)
             # Append post ID to file
