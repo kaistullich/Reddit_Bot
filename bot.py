@@ -1,7 +1,10 @@
-import praw
-import pdb
-import re
 import os
+import random
+import re
+
+import praw
+
+from quotes import quote_replies
 
 reddit = praw.Reddit('bot1')
 
@@ -15,22 +18,22 @@ if not os.path.isfile("posts_replied_to.txt"):
 # If `posts_replied_to.txt` file exits
 else:
     # Open file
-    with open("posts_replied_to.txt", "r") as f:
+    with open("posts_replied_to.txt") as f:
         # Read file contents
-       posts_replied_to = f.read()
+        posts_replied_to = f.read()
         # Split on new lines
-       posts_replied_to = posts_replied_to.split("\n")
+        posts_replied_to = posts_replied_to.split("\n")
         # If list contains empty values remove
-       posts_replied_to = list(filter(None, posts_replied_to))
+        posts_replied_to = list(filter(None, posts_replied_to))
 
 # Loop through `hot` posts (limit to 5)
-for submission in subreddit.new(limit=5):
+for submission in subreddit.new(limit=15):
     # Check if post ID is inside of file already
     if submission.id not in posts_replied_to:
         # Check title of post contains `i love python`
         if re.search("i love python", submission.title, re.IGNORECASE):
             # Reply to post
-            submission.reply("Donald Trump says: SAD!")
+            submission.reply('Useless Quote Bot: ' + random.choice(quote_replies))
             # Console log which post was replied to
             print("Bot replying to : ", submission.title)
             # Append post ID to list

@@ -1,6 +1,6 @@
 # SOURCE OF QUOTES: http://www.quotery.com/lists/100-funny-quotes-worth-laughing-over/
 
-replies = [
+quote_replies = [
     "When I die, I want to go peacefully like my grandfather did–in his sleep. Not yelling and screaming like the passengers in his car.",
     "I have six locks on my door all in a row. When I go out, I lock every other one. I figure no matter how long somebody stands there picking the locks, they are always locking three.",
     "Always borrow money from a pessimist. He won’t expect it back.",
