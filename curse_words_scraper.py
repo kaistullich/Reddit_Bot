@@ -55,10 +55,11 @@ def deadspin_curse_scraper():
 
         # Empty cuss_words list
         cuss_words = list()
+
         # Loop through all `ol` tags
-        for el in ol:
+        for elem in ol:
             # Store all `li` tags
-            li_data = el.find_all('li')
+            li_data = elem.find_all('li')
             # Loop through all `li` tags
             for li in li_data:
                 # Append words to list
