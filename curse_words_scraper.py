@@ -32,9 +32,9 @@ def slate_curse_scraper():
                 for words in table_data:
                     # Add `td` text to list
                     cuss_words.append(words.text)
-
+        # Return completed list
         return cuss_words
-
+    # If no connection was made with URL
     else:
         print('Connection not successful with URL')
 
@@ -63,9 +63,12 @@ def deadspin_curse_scraper():
             for li in li_data:
                 # Append words to list
                 cuss_words.append(li.text)
-
+        # Return completed list
         return cuss_words
 
+# If no connection was made with URL
+    else:
+        print('Connection not successful with URL')
 
 def parse_list(l):
     # Loop through list
