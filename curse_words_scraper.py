@@ -66,8 +66,7 @@ def deadspin_curse_scraper():
                 cuss_words.append(li.text)
         # Return completed list
         return cuss_words
-
-# If no connection was made with URL
+    # If no connection was made with URL
     else:
         print('Connection not successful with URL')
 
@@ -96,5 +95,3 @@ if __name__ == '__main__':
     deadspin_filtered_set = parse_list(deadspin_unfiltered_list)
     # Combine both sets together to remove doubles
     complete_cuss_set = slate_filtered_set.union(deadspin_filtered_set)
-
-    print(complete_cuss_set)
