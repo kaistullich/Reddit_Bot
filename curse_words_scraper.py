@@ -1,11 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
-r = requests.get(
-    'http://www.slate.com/blogs/lexicon_valley/2013/09/11/top_swear_words_most_popular_curse_words_on_facebook.html')
 
+def slate_curse_scraper():
+    # Send off request
+    r = requests.get(
+        'http://www.slate.com/blogs/lexicon_valley/2013/09/11/top_swear_words_most_popular_curse_words_on_facebook.html')
 
-def scraper():
     # Check if requests status is 200
     if r.status_code == 200:
         print('** Website Online **')
@@ -52,5 +53,5 @@ def parse_set(l):
 
 
 if __name__ == '__main__':
-    unfiltered_set = scraper()
-    filtered_set = parse_set(unfiltered_set)
+    unfiltered_set = slate_curse_scraper()
+    slate_filtered_set = parse_set(unfiltered_set)
