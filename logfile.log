@@ -1,6 +1,0 @@
-
-2017-04-28 12:24:08,429 
-<class 'praw.exceptions.APIException'>. RATELIMIT: 'you are doing that too much. try again in 3 minutes.' on field 'ratelimit', @ line: 63
-
-2017-04-28 12:24:13,568 
-<class 'praw.exceptions.APIException'>. RATELIMIT: 'you are doing that too much. try again in 3 minutes.' on field 'ratelimit', @ line: 63

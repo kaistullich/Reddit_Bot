@@ -10,6 +10,7 @@ import sys
 
 import praw
 
+from praw.exceptions import APIException
 from quotes import quote_replies
 
 # Logging file
@@ -61,7 +62,7 @@ for submission in subreddit.new(limit=5):
             # Reply to post
             try:
                 submission.reply('Useless Quote Bot: ' + random.choice(quote_replies))
-            except praw.exceptions.APIException:
+            except APIException:
                 logging.error(error_handling())
             # Console log which post was replied to
             print("Bot replying to : ", submission.title)
