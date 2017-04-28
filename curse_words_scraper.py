@@ -39,25 +39,18 @@ def scraper():
 
 
 def parse_set(l):
+    # Loop through list
     for word in l:
+        # Check if strings are numbers or capitalized
         if word.istitle() or word.isdigit():
+            # Remove strings if matching criterion
             l.remove(word)
-
+    # Store list inside of set to remove doubles
     completed_set = set(filter(None, l))
-
+    # Return filtered list/set
     return completed_set
 
 
 if __name__ == '__main__':
     unfiltered_set = scraper()
     filtered_set = parse_set(unfiltered_set)
-
-    print(filtered_set)
-
-    # Full Set
-    # cuss_words = {'', '9', 'Britain', '11', 'South', '10', '20', '45-54', 'fag', 'crap', 'bugger', 'shit', 'Canada',
-    #               '25-34', 'West', '7', '18-24', '17', '13', 'damn', 'bollocks', 'douche', 'pussy', '13-17', 'Both',
-    #               'Female', '19', 'asshole', '14', 'bloody', 'Male', 'dick', 'darn', '18', '5', '12', 'cunt', '35-44',
-    #               'cock', '4', '1', '2', '3', 'slut', 'Midwest', 'U.S.', '16', 'arsehole', 'fuck', '6', '55+', 'bitch',
-    #               '15', 'bastard', 'piss', 'Australia', '8', 'Northeast'
-    #               }
