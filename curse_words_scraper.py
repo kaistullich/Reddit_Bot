@@ -9,7 +9,7 @@ def slate_curse_scraper():
 
     # Check if requests status is 200
     if r.status_code == 200:
-        print('** Website Online **')
+        print('** {url} IS ONLINE! **'.format(url=r.url))
         # All HTML content
         html = r.text
         # Create soup object
@@ -45,7 +45,7 @@ def deadspin_curse_scraper():
 
     # Check if requests status is 200
     if r.status_code == 200:
-        print('** Website Online **')
+        print('** {url} IS ONLINE! **'.format(url=r.url))
         # All HTML content
         html = r.text
         # Create soup object
@@ -70,6 +70,7 @@ def deadspin_curse_scraper():
 # If no connection was made with URL
     else:
         print('Connection not successful with URL')
+
 
 def parse_list(l):
     # Loop through list
