@@ -6,3 +6,4 @@ __pycache__
 .idea/
 posts_replied_to.txt
 config.json
+logfile.log
