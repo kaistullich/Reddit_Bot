@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-r = requests.get('http://www.slate.com/blogs/lexicon_valley/2013/09/11/top_swear_words_most_popular_curse_words_on_facebook.html')
+r = requests.get(
+    'http://www.slate.com/blogs/lexicon_valley/2013/09/11/top_swear_words_most_popular_curse_words_on_facebook.html')
+
 
 def scraper():
     # Check if requests status is 200
@@ -9,11 +11,12 @@ def scraper():
         print('** Website Online **')
         # All HTML content
         html = r.text
+        # Create soup object
         soup = BeautifulSoup(html, 'lxml')
-         # All tables
+        # All tables
         tables = soup.find_all('table', {'class': 'interactive_table'})
 
-        # Empty set for cuss words
+        # Empty list for cuss words
         cuss_words = list()
 
         # Loop through all tables
@@ -21,12 +24,12 @@ def scraper():
             # Store all `tr` tags
             table_row = table.find_all('tr')
             # Loop through `tr` tags
-            for table_td in table_row:
+            for table_td in table_row[1:]:
                 # Store all `td` tags
                 table_data = table_td.find_all('td')
                 # Loop through all `td` tags
                 for words in table_data:
-                    # Add `td` text to set
+                    # Add `td` text to list
                     cuss_words.append(words.text)
 
         return cuss_words
@@ -34,13 +37,13 @@ def scraper():
     else:
         print('Connection not successful with URL')
 
+
 def parse_set(l):
     for word in l:
-        # word = word.strip('+-')
         if word.istitle() or word.isdigit():
             l.remove(word)
 
-    completed_set = list(filter(None, l))
+    completed_set = set(filter(None, l))
 
     return completed_set
 
