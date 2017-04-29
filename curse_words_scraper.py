@@ -36,7 +36,8 @@ def slate_curse_scraper():
         return cuss_words
     # If no connection was made with URL
     else:
-        print('Connection not successful with URL')
+        # If connection was unsuccessful 
+        print('** COULD NOT CONNECT TO: {url} **'.format(url=r.url))
 
 
 def deadspin_curse_scraper():
@@ -68,7 +69,8 @@ def deadspin_curse_scraper():
         return cuss_words
     # If no connection was made with URL
     else:
-        print('Connection not successful with URL')
+        # If connection was unsuccessful
+        print('** COULD NOT CONNECT TO: {url} **'.format(url=r.url))
 
 
 def parse_list(l):
