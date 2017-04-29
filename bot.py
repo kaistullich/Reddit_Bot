@@ -68,6 +68,7 @@ for submission in subreddit.new(limit=5):
             print("Bot replying to : ", submission.title)
             # Append post ID to list
             posts_replied_to.append(submission.id)
+            # Temporary `Rate limit` fix: TODO adjust this
             time.sleep(5)
 
 # Open txt file
